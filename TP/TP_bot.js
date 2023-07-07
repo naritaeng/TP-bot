@@ -1,6 +1,6 @@
 require("dotenv").config();
 const TelegramBot = require("node-telegram-bot-api");
-const token = process.env.bottk;
+const token = '5813670487:AAHCqITYcWT2-qMjRgcPuxvQulcmb1YMYMs'
 const bot = new TelegramBot(token, { polling: true });
 
 const axios = require("axios");
@@ -29,6 +29,13 @@ bot.onText(/^잘가/, (msg, match) => {
   const chatId = msg.chat.id;
   //   const resp = match['input'] //메아리
   const resp = "싫다";
+  console.log(resp);
+  bot.sendMessage(chatId, resp);
+});
+bot.onText(/^인성/, (msg, match) => {
+  const chatId = msg.chat.id;
+  //   const resp = match['input'] //메아리
+  const resp = "어쩌라고";
   console.log(resp);
   bot.sendMessage(chatId, resp);
 });
